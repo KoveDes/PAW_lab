@@ -1,0 +1,2 @@
+#05/03/2022
+   Dorobienie kalkulatora kredytowego (podać kwotę, ile lat i oprocentowanie, liczyć miesięczną ratę)
