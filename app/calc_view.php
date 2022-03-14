@@ -8,11 +8,12 @@
 
 </head>
 <body>
+<a href="<?php print(_APP_ROOT);?>/app/security/logout.php" class="pure-button pure-button-primary" style="background: rgb(21, 23, 28)">Wyloguj</a>
 <div style="width:90%; margin: 2em auto;">
-	<a href="<?php print(_APP_ROOT);?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+
 </div>
 
-	<div style="margin: 0px 20px">
+	<div style="margin: 0px 20px ">
 <h1>Kalkulator kredytowy</h1><br>
 <form action="<?php print(_APP_URL);?>/app/calc.php" method="post" class='pure-form pure-form-aligned'>
    <div class="pure-control-group">
@@ -28,7 +29,7 @@
 		<input type="text" name="rate" id="rate" value="<?php check($rate)?>" placeholder="%" size="3" class="pure-input-rounded">  <br>
 	</div>
 
- 		<input type="submit" value="Oblicz ratę miesięczną" class="pure-button pure-button-primary" style="margin: 10px 0 0 10px; width:30%; font-size: 19px" >
+ 		<input type="submit" value="Oblicz ratę miesięczną" class="pure-button pure-button-primary" style="margin: 10px 0 0 10px; width:30%; font-size: 19px; background-color: #1e8b49;" >
 
 	</form>
 </div>
