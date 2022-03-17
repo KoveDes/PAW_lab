@@ -1,2 +1,6 @@
-#05/03/2022
-   Dorobienie kalkulatora kredytowego (podać kwotę, ile lat i oprocentowanie, liczyć miesięczną ratę)
+#GIT TUTORIAL
+<<Tworzenie nowej gałęzi i dodanie jej do githuba>>
+   git branch nazwa
+   git checkout nazwa
+   git add . // dodaje wszystkie pliki
+   git commit "wiadomość"
