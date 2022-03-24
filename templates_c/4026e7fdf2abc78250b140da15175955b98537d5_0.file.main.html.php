@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-17 21:31:59
+/* Smarty version 4.1.0, created on 2022-03-24 09:56:28
   from 'C:\xampp\htdocs\PAW\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62339abf06e551_61938052',
+  'unifunc' => 'content_623c323c766405_21069119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4026e7fdf2abc78250b140da15175955b98537d5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PAW\\templates\\main.html',
-      1 => 1647549117,
+      1 => 1648112185,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62339abf06e551_61938052 (Smarty_Internal_Template $_smarty_tpl) {
+function content_623c323c766405_21069119 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -37,7 +37,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="<?php echo (($tmp = $_smarty_tpl->tpl_vars['page_description']->value ?? null)===null||$tmp==='' ? 'Opis domyślny' ?? null : $tmp);?>
 ">
-   <link rel="stylesheet" href="css/main.css" />
+   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+/css/main.css" />
 
    <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Nie działa :(" ?? null : $tmp);?>
 </title>
@@ -70,7 +71,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
       <!-- CONTENT -->
       <div id="main">
          <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4215353262339abf06db11_87289906', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1681273325623c323c765707_10150351', 'content');
 ?>
 
 
@@ -81,7 +82,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4215353262339abf06
             <ul class="copyright">
                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                <li><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11647553962339abf06e0b5_46267901', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_623192982623c323c765ed9_02686933', 'footer');
 ?>
 </li>
             </ul>
@@ -93,12 +94,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11647553962339abf0
 
 </html><?php }
 /* {block 'content'} */
-class Block_4215353262339abf06db11_87289906 extends Smarty_Internal_Block
+class Block_1681273325623c323c765707_10150351 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_4215353262339abf06db11_87289906',
+    0 => 'Block_1681273325623c323c765707_10150351',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -108,12 +109,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_11647553962339abf06e0b5_46267901 extends Smarty_Internal_Block
+class Block_623192982623c323c765ed9_02686933 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_11647553962339abf06e0b5_46267901',
+    0 => 'Block_623192982623c323c765ed9_02686933',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
