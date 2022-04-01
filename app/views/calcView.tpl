@@ -1,4 +1,4 @@
-{extends file="../../templates/main.html"}
+{extends file="main.tpl"}
 
 {block name=footer}
 Wykonano jakimś cudem

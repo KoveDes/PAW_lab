@@ -10,7 +10,7 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="{$page_description|default:'Opis domyślny'}">
-   <link rel="stylesheet" href="{$app_url}/css/main.css" />
+   <link rel="stylesheet" href="{$config->app_url}/css/main.css" />
 
    <title>{$page_title|default:"Nie działa :("}</title>
 </head>

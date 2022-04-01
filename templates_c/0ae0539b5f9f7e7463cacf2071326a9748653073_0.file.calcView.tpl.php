@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-17 21:31:59
-  from 'C:\xampp\htdocs\PAW\app\calc.html' */
+/* Smarty version 4.1.0, created on 2022-04-01 12:25:36
+  from 'C:\xampp\htdocs\PAW_current\app\views\calcView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62339abf05dfc9_02397931',
+  'unifunc' => 'content_6246d320452592_76003516',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd9fae678df4089d937e3764a9becc1a0e12190be' => 
+    '0ae0539b5f9f7e7463cacf2071326a9748653073' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\PAW\\app\\calc.html',
-      1 => 1647549106,
+      0 => 'C:\\xampp\\htdocs\\PAW_current\\app\\views\\calcView.tpl',
+      1 => 1648807913,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62339abf05dfc9_02397931 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6246d320452592_76003516 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_99790933562339abf053113_31131386', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8885820496246d320425364_34164157', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_78848660862339abf0539b7_74529762', 'content');
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.html");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17775873106246d3204273d8_76911717', 'content');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_99790933562339abf053113_31131386 extends Smarty_Internal_Block
+class Block_8885820496246d320425364_34164157 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_99790933562339abf053113_31131386',
+    0 => 'Block_8885820496246d320425364_34164157',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ Wykonano jakimś cudem
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_78848660862339abf0539b7_74529762 extends Smarty_Internal_Block
+class Block_17775873106246d3204273d8_76911717 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_78848660862339abf0539b7_74529762',
+    0 => 'Block_17775873106246d3204273d8_76911717',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,19 +67,23 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <section id="contact">
     <div class="inner">
         <section>
-            <form action="#main" method="post">
-                <div class="fields">
+            <form action="<?php echo $_smarty_tpl->tpl_vars['config']->value->action_root;?>
+calcCompute" method="post" autocomplete="on">
+                <div class=" fields">
                     <div class="field">
                         <label for="amount">Kwota (zł)</label>
-                        <input type="text" name="amount" id="amount" />
+                        <input type="text" name="amount" id="amount" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->amount;?>
+" />
                     </div>
                     <div class="field half">
                         <label for="time">Czas (w latach)</label>
-                        <input type="text" name="time" id="time" />
+                        <input type="text" name="time" id="time" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->time;?>
+" />
                     </div>
                     <div class="field half">
                         <label for="rate">Oprocentowanie (%)</label>
-                        <input type="text" name="rate" id="rate" />
+                        <input type="text" name="rate" id="rate" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->rate;?>
+" />
                     </div>
                 </div>
                 <ul class="actions">
@@ -88,28 +92,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </form>
             <section>
                 <div class="fields">
-                    <?php if ((isset($_smarty_tpl->tpl_vars['messages']->value))) {?>
-                    <?php if (count($_smarty_tpl->tpl_vars['messages']->value) > 0) {?>
-
+                    <?php if ($_smarty_tpl->tpl_vars['messages']->value->isError()) {?>
                     <h3 style="color:#e52424">Wystąpiły błędy:</h3>
                     <ol class="err">
                         <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value, 'msg');
-$_smarty_tpl->tpl_vars['msg']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
-$_smarty_tpl->tpl_vars['msg']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getErrors(), 'err');
+$_smarty_tpl->tpl_vars['err']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
+$_smarty_tpl->tpl_vars['err']->do_else = false;
 ?>
-                        <li style="color:#d5be1d"><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+                        <li style="color:#d5be1d"><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
 </li>
                         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </ol>
                     <?php }?>
-                    <?php }?>
 
-                    <?php if ((isset($_smarty_tpl->tpl_vars['result']->value))) {?>
-                    <h2 style="color: black">Wynik: <span style="color: #1d975efa"><?php echo $_smarty_tpl->tpl_vars['result']->value;?>
+                    <?php if ((isset($_smarty_tpl->tpl_vars['res']->value->result))) {?>
+                    <h2 style="color: black">Wynik: <span style="color: #1d975efa"><?php echo $_smarty_tpl->tpl_vars['res']->value->result;?>
 </span> zł</h2>
 
                     <?php }?>
@@ -119,10 +120,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </section>
         <section class="split">
             <section>
-                <?php if ($_smarty_tpl->tpl_vars['result']->value != null) {?>
+                <?php if ($_smarty_tpl->tpl_vars['res']->value->result != null) {?>
                 <img src="https://i2.wp.com/channongray.com/wp-content/uploads/2015/07/bb6ibz.jpg" alt="" srcset="">
                 <?php }?>
-                <?php if (!(isset($_smarty_tpl->tpl_vars['result']->value))) {?>
+                <?php if (!(isset($_smarty_tpl->tpl_vars['res']->value->result))) {?>
                 <img src="https://media.thetab.com/blogs.dir/15/files/2021/05/179968839-277908557378446-3702554718123604703-n.jpg"
                     alt="" srcset="">
                 <?php }?>
