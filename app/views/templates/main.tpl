@@ -23,25 +23,8 @@
          <a class="logo"><strong>Jacek</strong> <span>Czernecki</span></a>
       </header>
 
-      <!-- BANNER -->
-      <section id="banner" class="major">
-         <div class="inner">
-            <header class="major">
-               <h1>{$page_title|default:"Tytuł domyślny"}</h1>
-            </header>
-            <div class="content">
-               <p>{$page_header|default:"Tytuł domyślny"} </p>
-               <ul class="actions">
-                  <li><a href="#main" class="button next scrolly"></a></li>
-               </ul>
-            </div>
-         </div>
-      </section>
 
-      <!-- CONTENT -->
-      <div id="main">
          {block name=content} Domyślna treść zawartości .... {/block}
-
 
 
          <!-- FOOTER -->

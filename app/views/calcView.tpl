@@ -5,6 +5,28 @@ Wykonano jakimś cudem
 {/block}
 
 {block name=content}
+
+ <!-- BANNER -->
+      <section id="banner" class="major">
+         <div class="inner">
+            <header class="major">
+               <h1>{$page_title|default:"Tytuł domyślny"}</h1>
+            </header>
+            <div class="content">
+               <p>użytkownik: {$user->login} </p>
+               <br><br>
+               <p> rola: {$user->role}</p>
+               <ul class="actions">
+                  <li><a href="{$config->action_url}logout" class="button ">Wyloguj</a></li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <!-- CONTENT -->
+      <div id="main">
+
+
 <section id="contact">
     <div class="inner">
         <section>
@@ -29,16 +51,7 @@ Wykonano jakimś cudem
             </form>
             <section>
                 <div class="fields">
-                    {if $messages->isError()}
-                    <h3 style="color:#e52424">Wystąpiły błędy:</h3>
-                    <ol class="err">
-                        {foreach $messages->getErrors() as $err}
-                        {strip}
-                        <li style="color:#d5be1d">{$err}</li>
-                        {/strip}
-                        {/foreach}
-                    </ol>
-                    {/if}
+                    {include file='messages.tpl'}
 
                     {if isset($res->result)}
                     <h2 style="color: black">Wynik: <span style="color: #1d975efa">{$res->result}</span> zł</h2>

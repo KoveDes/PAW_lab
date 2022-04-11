@@ -11,19 +11,25 @@ Kontroler jako jedyny punkt wejścia incjujący aplikację
 -->
 <?php
 require_once 'init.php';
+getRouter()->setDefaultRoute('calcShow'); // akcja/ścieżka domyślna
+getRouter()->setLoginRoute('login'); // akcja/ścieżka na potrzeby logowania (przekierowanie, gdy nie ma dostępu)
 
+getRouter()->addRoute('calcShow', 'CalcCtrl', ['user', 'admin']);
+getRouter()->addRoute('calcCompute', 'CalcCtrl', ['user', 'admin']);
+getRouter()->addRoute('login', 'LoginCtrl');
+getRouter()->addRoute('logout', 'LoginCtrl', ['user', 'admin']);
+
+getRouter()->go(); //wybiera i uruchamia odpowiednią ścieżkę na podstawie parametru 'action';
+
+/*  STARA WERSJA
 switch ($action) {
-    default: // 'calcView'
-        //utwórz obiekty i użyj
-        $ctrl = new \app\controllers\CalcCtrl();
-        $ctrl->generateView();
-        break;
-    case 'calcCompute':
-        $ctrl = new app\controllers\CalcCtrl();
-        $ctrl->calculate();
-        break;
-    case 'action1':
-        // working_1
-        print('Working_1');
-
-} 
+default:
+control('app\\controllers', 'CalcCtrl', 'generateView', ['user', 'admin']);
+case 'calcCompute': // akcja PRYWATNA
+control(null, 'CalcCtrl', 'process', ['user', 'admin']);
+case 'login': // akcja PUBLICZNA
+control('app\\controllers', 'LoginCtrl', 'DoLogin');
+case 'logout':
+control(null, 'LoginCtrl', 'DoLogout', ['user', 'admin']);
+}
+ */

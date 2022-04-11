@@ -1,8 +1,9 @@
 <?php
 namespace app\controllers;
+
 use app\forms\CalcForm;
 use app\transfer\calcResult;
- 
+
 // Kontroler
 class CalcCtrl
 {
@@ -54,7 +55,7 @@ class CalcCtrl
         return !getMessages()->isError();
     }
     //Przetwarzanie
-    public function calculate()
+    public function action_calcCompute()
     {
         $this->getParams();
         if ($this->validate()) {
@@ -72,6 +73,12 @@ class CalcCtrl
         $this->generateView();
     }
 
+    public function action_calcShow()
+    {
+        getMessages()->addInfo('Witaj w kalkulatorze');
+        $this->generateView();
+    }
+
     //Generowanie widoku
     public function generateView()
     {
@@ -80,6 +87,7 @@ class CalcCtrl
         getSmarty()->assign('page_header', 'Oblicz ratę kredytu');
 
         //zmienne
+        getSmarty()->assign('user', unserialize($_SESSION['user']));
         getSmarty()->assign('form', $this->form);
         getSmarty()->assign('res', $this->result);
 
