@@ -18,6 +18,7 @@ Wykonano jakimś cudem
                <p> rola: {$user->role}</p>
                <ul class="actions">
                   <li><a href="{$config->action_url}logout" class="button ">Wyloguj</a></li>
+                  <li><a href="{$config->action_url}showDbHistory" class="button ">Pokaż historię</a></li>
                </ul>
             </div>
          </div>

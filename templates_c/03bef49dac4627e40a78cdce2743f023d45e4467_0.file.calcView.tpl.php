@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-06 16:39:19
+/* Smarty version 4.1.0, created on 2022-04-16 20:09:49
   from 'C:\xampp\htdocs\PAW\app\views\calcView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_624da6174f4c05_60974828',
+  'unifunc' => 'content_625b066d99f239_21943426',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03bef49dac4627e40a78cdce2743f023d45e4467' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PAW\\app\\views\\calcView.tpl',
-      1 => 1649255959,
+      1 => 1650132586,
       2 => 'file',
     ),
   ),
@@ -21,28 +21,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_624da6174f4c05_60974828 (Smarty_Internal_Template $_smarty_tpl) {
+function content_625b066d99f239_21943426 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1606277533624da6174da5c2_41218173', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1800751541625b066d981d77_47538636', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1639145694624da6174db939_91302141', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1267760447625b066d9830f4_12124487', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_1606277533624da6174da5c2_41218173 extends Smarty_Internal_Block
+class Block_1800751541625b066d981d77_47538636 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_1606277533624da6174da5c2_41218173',
+    0 => 'Block_1800751541625b066d981d77_47538636',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ Wykonano jakimś cudem
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1639145694624da6174db939_91302141 extends Smarty_Internal_Block
+class Block_1267760447625b066d9830f4_12124487 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1639145694624da6174db939_91302141',
+    0 => 'Block_1267760447625b066d9830f4_12124487',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,6 +82,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                <ul class="actions">
                   <li><a href="<?php echo $_smarty_tpl->tpl_vars['config']->value->action_url;?>
 logout" class="button ">Wyloguj</a></li>
+                  <li><a href="<?php echo $_smarty_tpl->tpl_vars['config']->value->action_url;?>
+showDbHistory" class="button ">Pokaż historię</a></li>
                </ul>
             </div>
          </div>

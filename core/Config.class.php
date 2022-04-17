@@ -13,5 +13,4 @@ class Config
 
     public $login_action;
     public $roles;
-
 }

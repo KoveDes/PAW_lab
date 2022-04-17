@@ -56,37 +56,3 @@ function inRole($role)
 {
     return isset(getConf()->roles[$role]);
 }
-/* Nie potrzebna dla Routera - działanie przenosimy do klasy Router
-function control($namespace, $controller, $method, $roles = null)
-{
-if ($roles != null) {
-$found = false;
-if (is_array($roles)) {
-foreach ($roles as $role) {
-if (inRole($role)) {$found = true;
-break;}
-}
-} else {
-if (inRole($roles)) {
-$found = true;
-}
-
-}
-if (!$found) {
-forwardTo(getConf()->login_action);
-}
-
-}
-if (empty($namespace)) {
-$controller = "app\\controllers\\" . $controller;
-} else {
-$controller = $namespace . "\\" . $controller;
-}
-include_once getConf()->root_path . DIRECTORY_SEPARATOR . $controller . '.class.php';
-$ctrl = new $controller;
-if (is_callable(array($ctrl, $method))) {
-$ctrl->$method();
-}
-exit;
-}
- */

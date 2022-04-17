@@ -69,8 +69,12 @@ class CalcCtrl
             $this->result->result = round($this->result->result, 2);
 
             getMessages()->addInfo('Wykonano obliczenia.');
+            # dodajemy kod zwiazany z BD
+            $this->insertIntoDb();
+            getMessages()->addInfo('Dodano rekod do bazy danych.');
         }
         $this->generateView();
+
     }
 
     public function action_calcShow()
@@ -93,5 +97,16 @@ class CalcCtrl
 
         // wywołanie szablonu
         getSmarty()->display('calcView.tpl');
+    }
+
+    private function insertIntoDb()
+    {
+        getDb()->insert('wynik', [
+            "kwota" => $this->form->amount,
+            "lat" => $this->form->time,
+            "procent" => $this->form->rate,
+            "rata" => $this->result->result,
+            "data" => date("Y-m-d H:i:s"),
+        ]);
     }
 }
